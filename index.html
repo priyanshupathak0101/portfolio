@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <title>Shiddat Studios | Cinematographer Portfolio</title>
 
@@ -16,6 +17,11 @@
 </head>
 
 <body>
+  <div id="loader">
+
+<h1>SHIDDAT STUDIOS</h1>
+
+</div>
 
 <header>
 
@@ -262,7 +268,61 @@ Through creative lighting, composition, and motion, I craft stories that look li
 <p>© 2026 Shiddat Studios | Cinematographer Portfolio</p>
 
 </footer>
+<div id="lightbox">
 
+<img id="lightbox-img">
+
+</div>
+  <script>
+
+// Loader
+window.addEventListener("load",function(){
+document.getElementById("loader").style.display="none";
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+anchor.addEventListener("click",function(e){
+e.preventDefault();
+document.querySelector(this.getAttribute("href")).scrollIntoView({
+behavior:"smooth"
+});
+});
+});
+
+// Video preview hover
+document.querySelectorAll(".card").forEach(card=>{
+
+const video = card.querySelector("video");
+
+if(video){
+
+card.addEventListener("mouseenter",()=>{
+video.play();
+});
+
+card.addEventListener("mouseleave",()=>{
+video.pause();
+video.currentTime=0;
+});
+
+}
+
+});
+
+// Lightbox gallery
+document.querySelectorAll(".photo-gallery img").forEach(img=>{
+img.onclick=()=>{
+document.getElementById("lightbox").style.display="flex";
+document.getElementById("lightbox-img").src=img.src;
+}
+});
+
+document.getElementById("lightbox").onclick=()=>{
+document.getElementById("lightbox").style.display="none";
+}
+
+</script>
 </body>
 
 </html>
