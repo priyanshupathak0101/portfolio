@@ -391,3 +391,37 @@ width:100%;
 height:260px;
 object-fit:cover;
 }
+.project-hero{
+height:50vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background:black;
+color:white;
+text-align:center;
+}
+
+.video-gallery{
+display:flex;
+justify-content:center;
+margin-top:40px;
+}
+
+.video-gallery video{
+width:70%;
+}
+
+.photo-gallery{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+padding:40px;
+}
+
+.photo-gallery img{
+width:100%;
+height:250px;
+object-fit:cover;
+cursor:pointer;
+}
